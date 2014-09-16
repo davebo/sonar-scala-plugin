@@ -42,11 +42,11 @@ public class ScalaPlugin extends SonarPlugin {
 
   public List getExtensions() {
     return Arrays.asList(
-        Scala.class
+        Scala.class,
+        ScalaDefaultProfile.class
         //ScalaSourceImporterSensor.class,
         //ScalaColorizerFormat.class,
         //BaseMetricsSensor.class,
-        //ScalaDefaultProfile.class
     );
   }
 
