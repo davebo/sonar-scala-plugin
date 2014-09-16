@@ -19,15 +19,17 @@
  */
 package org.sonar.plugins.scala;
 
-import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
-import org.sonar.api.Extension;
 import org.sonar.api.SonarPlugin;
-//import org.sonar.plugins.scala.colorization.ScalaColorizerFormat;
 import org.sonar.plugins.scala.language.Scala;
-//import org.sonar.plugins.scala.sensor.BaseMetricsSensor;
-//import org.sonar.plugins.scala.sensor.ScalaSourceImporterSensor;
+/**
+* To be added:
+* import org.sonar.plugins.scala.colorization.ScalaColorizerFormat;
+* import org.sonar.plugins.scala.sensor.BaseMetricsSensor;
+* import org.sonar.plugins.scala.sensor.ScalaSourceImporterSensor;
+**/
 
 /**
  * This class is the entry point for all extensions made by the
@@ -38,14 +40,14 @@ import org.sonar.plugins.scala.language.Scala;
  */
 public class ScalaPlugin extends SonarPlugin {
 
-  public List<Class<? extends Extension>> getExtensions() {
-    final List<Class<? extends Extension>> extensions = new ArrayList<Class<? extends Extension>>();
-    extensions.add(Scala.class);
-    //extensions.add(ScalaSourceImporterSensor.class);
-    //extensions.add(ScalaColorizerFormat.class);
-    //extensions.add(BaseMetricsSensor.class);
-    //extensions.add(ScalaDefaultProfile.class);
-    return extensions;
+  public List getExtensions() {
+    return Arrays.asList(
+        Scala.class
+        //ScalaSourceImporterSensor.class,
+        //ScalaColorizerFormat.class,
+        //BaseMetricsSensor.class,
+        //ScalaDefaultProfile.class
+    );
   }
 
   @Override
