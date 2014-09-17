@@ -17,9 +17,11 @@
  * License along with this program; if not, write to the Free Software
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02
  */
-package org.sonar.plugins.scala.language;
+package org.sonar.plugins.scala;
 
+import org.sonar.api.config.Settings;
 import org.sonar.api.resources.AbstractLanguage;
+
 
 /**
  * This class implements Scala as a language for Sonar.
@@ -29,10 +31,14 @@ import org.sonar.api.resources.AbstractLanguage;
  */
 public class Scala extends AbstractLanguage {
 
+  public static final String KEY = "scala";
+
+  public static final String NAME = "Scala";
+
   public static final Scala INSTANCE = new Scala();
 
   public Scala() {
-    super("scala", "Scala");
+    super(KEY, NAME);
   }
 
   public String[] getFileSuffixes() {

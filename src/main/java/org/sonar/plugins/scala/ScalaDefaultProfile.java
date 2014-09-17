@@ -23,7 +23,6 @@ import org.sonar.api.profiles.AnnotationProfileParser;
 import org.sonar.api.profiles.ProfileDefinition;
 import org.sonar.api.profiles.RulesProfile;
 import org.sonar.api.utils.ValidationMessages;
-import org.sonar.plugins.scala.language.Scala;
 
 import java.util.ArrayList;
 

@@ -23,7 +23,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import org.sonar.api.SonarPlugin;
-import org.sonar.plugins.scala.language.Scala;
+
 /**
 * To be added:
 * import org.sonar.plugins.scala.colorization.ScalaColorizerFormat;
