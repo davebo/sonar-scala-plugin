@@ -14,11 +14,15 @@
   <packaging>sonar-plugin</packaging>
   <version>1.0.0-SNAPSHOT</version>
 
+  <properties>
+    <sonar.sources>src/main</sonar.sources>
+    <sonar.tests>src/test</sonar.tests>
+  </properties>
   <dependencies>
     <dependency>
       <groupId>org.codehaus.sonar</groupId>
       <artifactId>sonar-plugin-api</artifactId>
-      <version>4.4</version>
+      <version>3.7.4</version>
       <scope>provided</scope>
     </dependency>
     <dependency>
@@ -36,22 +40,54 @@
       <artifactId>scala-library</artifactId>
       <version>2.11.2</version>
     </dependency>
-
   </dependencies>
-    <build>
+  <build>
+      <pluginManagement>
         <plugins>
-            <plugin>
-                <groupId>org.codehaus.sonar</groupId>
-                <artifactId>sonar-packaging-maven-plugin</artifactId>
-                <version>1.12.1</version>
-                <extensions>true</extensions>
-                <configuration>
-                    <pluginKey>scala</pluginKey>
-                    <pluginClass>org.sonar.plugins.scala.ScalaPlugin</pluginClass>
-                    <pluginName>Sonar Scala plugin</pluginName>
-                    <pluginDescription>Enables analysis of Scala projects into Sonar.</pluginDescription>
-                </configuration>
-            </plugin>
+          <plugin>
+              <groupId>org.scala-tools</groupId>
+              <artifactId>maven-scala-plugin</artifactId>
+              <version>2.15.2</version>
+          </plugin>
+          <plugin>
+              <groupId>org.codehaus.sonar</groupId>
+              <artifactId>sonar-packaging-maven-plugin</artifactId>
+              <version>1.12.1</version>
+          </plugin>
         </plugins>
-    </build>
+      </pluginManagement>
+      <plugins>
+          <plugin>
+              <groupId>org.scala-tools</groupId>
+              <artifactId>maven-scala-plugin</artifactId>
+              <executions>
+                  <execution>
+                      <id>scala-compile</id>
+                      <phase>process-resources</phase>
+                      <goals>
+                          <goal>compile</goal>
+                      </goals>
+                  </execution>
+                  <execution>
+                      <id>scala-test-compile</id>
+                      <phase>process-test-resources</phase>
+                      <goals>
+                          <goal>testCompile</goal>
+                      </goals>
+                  </execution>
+              </executions>
+          </plugin>
+          <plugin>
+              <groupId>org.codehaus.sonar</groupId>
+              <artifactId>sonar-packaging-maven-plugin</artifactId>
+              <extensions>true</extensions>
+              <configuration>
+                  <pluginKey>scala</pluginKey>
+                  <pluginClass>org.sonar.plugins.scala.ScalaPlugin</pluginClass>
+                  <pluginName>Sonar Scala plugin</pluginName>
+                  <pluginDescription>Enables analysis of Scala projects into Sonar.</pluginDescription>
+              </configuration>
+          </plugin>
+      </plugins>
+  </build>
 </project>

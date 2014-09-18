@@ -19,9 +19,7 @@
  */
 package org.sonar.plugins.scala;
 
-import org.sonar.api.config.Settings;
 import org.sonar.api.resources.AbstractLanguage;
-
 
 /**
  * This class implements Scala as a language for Sonar.
