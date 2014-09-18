@@ -23,12 +23,10 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
-
-public class ScalaDefaultProfileTest {
+public class ScalaMetricsTest {
 
     @Test
-    public void testCreateProfile() throws Exception {
+    public void testScalaMetric() throws Exception {
 
     }
 }
