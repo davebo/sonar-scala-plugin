@@ -29,9 +29,9 @@ import org.sonar.api.resources.AbstractLanguage;
  */
 public class Scala extends AbstractLanguage {
 
-  public static final String KEY = "scala";
-
   public static final String NAME = "Scala";
+
+  public static final String KEY = NAME.toLowerCase();
 
   public static final Scala INSTANCE = new Scala();
 
@@ -40,6 +40,6 @@ public class Scala extends AbstractLanguage {
   }
 
   public String[] getFileSuffixes() {
-    return new String[] { "scala" };
+    return new String[] { KEY };
   }
 }
